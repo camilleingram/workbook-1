@@ -53,7 +53,6 @@ public class MathApp {
         Random random = new Random ();
         randomNum = random.nextDouble(0, 1);
         System.out.printf("Question 7: Random Number is %f", randomNum);
-
-
+        
     }
 }
