@@ -2,39 +2,50 @@ package com.pluralsight;
 import java.util.Scanner;
 
 public class PayrollCalculator {
+
+    static Scanner scanner = new Scanner(System.in);
+
     public static void main(String[] args) {
 
-        Scanner scanner = new Scanner(System.in);
-
-        String name;
-        double hoursWorked;
-        double payRate;
-        double grossPay;
-        double overtimeRate;
-        double overtimeHours;
+        double hoursWorked, payRate;
 
         System.out.print("Enter your name: ");
-        name = scanner.nextLine();
-
-        System.out.print("How many hours have you worked? ");
-        hoursWorked = scanner.nextDouble();
+        String name = scanner.nextLine();
 
         System.out.print("How much are you paid an hour? ");
         payRate = scanner.nextDouble();
 
-        if (hoursWorked > 40) {
-            overtimeHours = hoursWorked - 40;
-            overtimeRate = overtimeHours * (payRate * 1.5);
-            grossPay = overtimeRate + (40 * payRate);
-
-            System.out.printf("%s, your gross pay is $%.2f", name, grossPay);
-
+        System.out.print("How many hours did you work? ");
+        hoursWorked = scanner.nextDouble();
+        if(hoursWorked > 40){
+            System.out.printf("%s, your gross pay is $%.2f.", name, calculateOTGrossPay(payRate, hoursWorked));
         } else {
-            grossPay = hoursWorked * payRate;
-
-            System.out.printf("%s, your gross pay is $%.2f", name, grossPay);
+            System.out.printf("%s, your gross pay is $%.2f.", name, calculateGrossPay(payRate, hoursWorked));
         }
 
         scanner.close();
+    }
+
+    public static double calculateGrossPay (double rate, double hours) {
+        double grossPay;
+
+        grossPay = rate * hours;
+
+        return grossPay;
+    }
+
+    public static double calculateOTGrossPay(double rate, double hours) {
+
+        double overtimeHours;
+        double overtimeRate;
+        double grossPay;
+
+        overtimeHours = hours - 40;
+        overtimeRate = overtimeHours * (rate * 1.5);
+        grossPay = overtimeRate + (40 * rate);
+
+        System.out.printf("You have worked %.2f overtime hours %n", overtimeHours);
+
+        return grossPay;
     }
 }
