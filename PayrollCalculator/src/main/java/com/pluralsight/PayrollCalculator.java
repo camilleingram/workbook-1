@@ -26,6 +26,7 @@ public class PayrollCalculator {
         scanner.close();
     }
 
+
     public static double calculateGrossPay (double rate, double hours) {
         double grossPay;
 
