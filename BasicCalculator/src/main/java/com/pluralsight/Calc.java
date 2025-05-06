@@ -24,6 +24,7 @@ public class Calc {
 
         System.out.printf("Possible Calculations:%n (A)dd%n (S)ubtract%n (M)ultiply%n (D)ivide%n");
         System.out.printf("Please select an option: %s%n", operator);
+        System.out.print("PLease select an option" + " " + operator);
 
         System.out.printf("%d * %d = %d", firstNum, secondNum, result);
         scanner.close();

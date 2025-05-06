@@ -34,6 +34,7 @@ public class RentalCarCalculator {
         double totalPrice = carRental(daysOfRental, basicRental, wantTag, wantGPS, wantAssist, age);
         System.out.println("Your total cost for your rental starting on " + pickUpDate + " and ending on " + pickUpDate.plusDays(daysOfRental));
         System.out.printf("is $%.2f", totalPrice);
+        }
 
 
 
@@ -72,4 +73,7 @@ public class RentalCarCalculator {
 
         return totalPrice;
     }
+}
+
+public void main() {
 }
