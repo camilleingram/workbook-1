@@ -43,7 +43,7 @@ public class MathApp {
         System.out.printf("Question 5: The distance between (5, 10) and (85, 50) is %f %n", distance);
 
 //        Question 6
-        double abValue
+        double abValue;
 
         abValue = Math.abs(-3.8);
         System.out.printf("Question 6: The absolute value is %f %n", abValue);
